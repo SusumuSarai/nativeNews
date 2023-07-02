@@ -2,15 +2,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { FontAwesome } from "@expo/vector-icons";
+import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./store";
 import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 import { HomeScreen } from "./screens/HomeScreen";
 import { ArticleScreen } from "./screens/ArticleScreen";
 import { ClipScreen } from "./screens/ClipScreen";
 
-const Tab = createMaterialBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const screenOption = ({ route }) => ({
   tabBarIcon: ({ color, size = 20 }) => {
